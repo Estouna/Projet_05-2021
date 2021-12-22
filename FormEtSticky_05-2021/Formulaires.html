@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Formulaires.css"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les formulaires</title>
+</head>
+<body>
+    <header>
+        <h1>Les balises de formulaire</h1> 
+    </header>
+    <main>
+        <section>
+                <p class="p-debut">
+                Les balises de formulaires sont de types bloc. Cependant, comme elles sont un peu particulières, je leur donne un petit espace à part.<br/> 
+                En outre, on mettra souvent des div et autres balises de type bloc entre les balises form puisque c'est indispensable si on veut y placer du texte.
+                </p>
+    
+            <h4>&lt;form&gt;</h4>
+                <p>
+                Permet de déclarer un formulaire. Ainsi, toutes les autres balises de formulaire se trouveront entre deux balises form.<br/> 
+                Cette balise possède deux attributs essentiels : method et action. Ils servent à indiquer où et comment envoyer le formulaire.<br/>
+                <br/> 
+                <span class="titre-type">- method :</span> cet attribut indique par quel moyen les données vont être envoyées. Il existe deux solutions pour envoyer des données sur le Web :<br/>
+                method="get" : c'est une méthode en général assez peu adaptée car elle est limitée à 255 caractères.<br/> 
+                La particularité vient du fait que les informations seront envoyées dans l'adresse de la page (http://…).<br/>
+                <br/>
+                method="post" : c'est la méthode la plus utilisée pour les formulaires car elle permet d'envoyer un grand nombre d'informations.<br/> 
+                Les données saisies dans le formulaire ne transitent pas par la barre d'adresse.<br/>
+                <br/>
+                <span class="titre-type">- action :</span> c'est l'adresse de la page ou du programme qui va traiter les informations.<br/> 
+                Cette page se chargera de vous envoyer un e-mail avec le message si c'est ce que vous voulez, ou bien d'enregistrer le message avec tous les autres dans une base de données.<br/>
+                Cela ne peut pas se faire en HTML et CSS, on utilisera en général un autre langage comme PHP.<br/>
+                <br/>
+                Dernier petit détail, on trouve aujourd'hui souvent des balises de formulaire type input en dehors des balises form, car les données sont traitées par le biais de JavaScript et envoyées en AJAX.<br/>
+                <br/>
+                Exemple :<br/>
+                <span class="code-visible">
+                &lt;form method="post" action="page-de-reception.php"&gt;<br/>
+                &emsp;&lt;input type="text" name="test" placeholder="test"&gt;<br/>
+                &lt;/form&gt;
+                </span>
+                </p>
+
+            <h4>&lt;label&gt;</h4>
+                <p class="p-form1">
+                Le rôle de la balise &lt;label&gt; est d'indiquer ce que doit écrire le visiteur, elle doit être liée à la zone de texte de la balise &lt;input&gt;.<br/> 
+                Pour la lier il faut que son attribut for est la même valeur que l'id de la balise &lt;input&gt;.<br/>
+                <br/>
+                Exemple :<br/>
+                <span class="code-visible">
+                &lt;form method="post" action="page-de-reception.php"&gt;<br/>
+                &emsp;&lt;p&gt;<br/>
+                &emsp;&emsp;&lt;label for="pseudo"&gt;Votre pseudo:&lt;/label&gt;<br/>
+                &emsp;&emsp;&lt;input type="text" name="pseudo" id="pseudo" placeholder="Ex: Martin"&gt;<br/>
+                &emsp;&lt;p&gt;<br/>
+                &lt;/form&gt;<br/>
+                </span>
+                <br/>
+                Une fois que les balises &lt;label&gt; et &lt;input&gt; sont liées, vous pouvez constater que cliquer sur le texte Votre pseudo: place le curseur automatiquement dans la zone de saisie.<br/>
+                </p>
+                <form method="post" action="page-de-reception.php">
+                    <p class="p-form2">
+                        <label for="pseudo">Votre pseudo :</label>
+                        <input type="text" name="pseudo" id="pseudo" placeholder="Ex: Martin">
+                    </p>
+                </form>
+
+            <h4>&lt;input&gt;</h4>
+                <p class="p-form1">
+                La balise de formulaire la plus classique. Elle affiche un petit champ de texte, lequel permet d'entrer un texte.<br/> 
+                Elle prend comme attribut type="" qui définit son type, lequel peut être :<br/>
+                <br/> 
+                <span class="titre-type">- text :</span><br/> 
+                Permet de créer une zone de texte monoligne, on ne peut y écrire qu'une seule ligne. Elle sert à saisir des textes courts, par exemple un pseudo.<br/>
+                </p> 
+                <form method="post" action="page-de-reception.php">
+                    <p class="p-form4">
+                        <label for="pseudo">Votre pseudo :</label>
+                        <input type="text" name="pseudo" id="pseudo" placeholder="Ex: Martin">
+                    </p>
+                </form>
+                <p class="p-form3">
+                <span class="titre-type">- number :</span><br/> 
+                Permet de saisir un nombre entier (pour l'âge par exemple), il s'affichera en général avec des petites flèches pour changer la valeur.<br/>
+                Vous pouvez personnaliser le fonctionnement du champ avec les attributs suivants :<br/>
+                min : valeur minimale autorisée.<br/>
+                max : valeur maximale autorisée.<br/>
+                step : c'est le « pas » de déplacement. Si vous indiquez un pas de 2, le champ n'acceptera que des valeurs de 2 en 2 (par exemple 0, 2, 4, 6…).<br/>
+                </p>
+                <form method="post" action="page-de-reception.php">
+                    <p class="p-form4">
+                        <label for="age">Votre âge :</label>
+                        <input type="number" name="age" id="age" min="10" max="120" placeholder="Ex: 35">
+                    </p>
+                </form>
+                <p class="p-form3">
+                <span class="titre-type">- password :</span><br/> 
+                Permet de créer une zone de mot passe, c'est-à-dire une zone où on ne voit pas à l'écran les caractères saisis.<br/>
+                </p>
+                <form method="post" action="page-de-reception.php">
+                    <p class="p-form4">
+                        <label for="pass">Votre mot de passe :</label>
+                        <input type="password" name="pass" id="pass">
+                    </p>
+                </form>
+                <p class="p-form3">
+                <span class="titre-type">- email :</span><br/>
+                Le champ vous semblera a priori identique mais votre navigateur sait désormais que l'utilisateur doit saisir une adresse e-mail. Il peut afficher une indication si l'adresse n'est pas un e-mail.<br/>
+                Certains navigateurs, comme les navigateurs mobiles sur iPhone et Android, affichent un clavier adapté à la saisie d'e-mail.<br/>
+                </p>
+                <form method="post" action="page-de-reception.php">
+                    <p class="p-form4">
+                        <label for="mail">Votre adresse e-mail :</label>
+                        <input type="email" name="mail" id="mail" placeholder="Ex: moa@free.fr">
+                    </p>
+                </form>
+                <p class="p-form3">
+                <span class="titre-type">- tel :</span><br/>
+                Ce champ est dédié à la saisie de numéros de téléphone, sur iPhone, par exemple, un clavier adapté s'affiche lorsqu'on doit remplir le champ.<br/>
+                </p>
+                <form method="post" action="page-de-reception.php">
+                    <p class="p-form4">
+                        <label for="phone">Votre numéro de téléphone :</label>
+                        <input type="tel" name="phone" id="phone" placeholder="Ex: 08 07 06 05 04">
+                    </p>
+                </form>
+                <p class="p-form3">
+                <span class="titre-type">- url :</span><br/>
+                Si le champ ne vous semble pas différent sur votre ordinateur, sachez que celui-ci comprend bel et bien que le visiteur est censé saisir une adresse. Les navigateurs mobiles affichent par exemple un clavier adapté à la saisie d'URL.<br/>
+                </p>
+                <form method="post" action="page-de-reception.php">
+                    <p class="p-form4">
+                        <label for="URL">URL :</label>
+                        <input type="url" name="URL" id="URL" placeholder="Ex: http://www.monsite.com" size="40">
+                    </p>
+                </form>
+                <p class="p-form3">
+                <span class="titre-type">- range :</span><br/>
+                Le type range permet de sélectionner un nombre avec un curseur (aussi appelé slider). Vous pouvez utiliser là aussi les attributs min, max et step pour restreindre les valeurs disponibles.<br/>
+                </p>
+                <form method="post" action="page-de-reception.php">
+                    <p class="p-form4">
+                        <label for="slider"></label>
+                        <input type="range" name="slider" id="slider" min="10" max="120">
+                    </p>
+                </form>
+                <p class="p-form3">
+                <span class="titre-type">- color :</span><br/>
+                Ce champ permet de saisir une couleur. En pratique, il reste assez peu mis en oeuvre par les navigateurs à l'heure actuelle. Ne vous étonnez pas si vous voyez seulement un champ de texte classique.<br/>
+                </p>
+                <form method="post" action="page-de-reception.php">
+                    <p class="p-form4">
+                        <label for="couleur">Votre couleur préférée :</label>
+                        <input type="color" name="couleur" id="couleur">
+                    </p>
+                </form>
+                <p class="p-form3">
+                <span class="titre-type">- date :</span><br/>
+                Pour la date (05/08/1985 par exemple).<br/>
+                </p>
+                <form method="post" action="page-de-reception.php">
+                    <p class="p-form4">
+                        <label for="born">Votre date de naissance :</label>
+                        <input type="date" name="born" id="born">
+                    </p>
+                </form>
+                <p class="p-form3">
+                <span class="titre-type">- datetime :</span><br/>
+                Pour la date et l'heure (avec gestion du décalage horaire)<br/>
+                </p>
+                <form method="post" action="page-de-reception.php">
+                    <p class="p-form4">
+                        <label for="dateti"></label>
+                        <input type="datetime" name="dateti" id="dateti">
+                    </p>
+                </form>
+                <p class="p-form3">
+                <span class="titre-type">- datetime-local :</span><br/>
+                Pour la date et l'heure (sans gestion du décalage horaire).<br/>
+                </p>
+                <form method="post" action="page-de-reception.php">
+                    <p class="p-form4">
+                        <label for="mail"></label>
+                        <input type="datetime-local" name="mail" id="mail">
+                    </p>
+                </form>
+                <p class="p-form3">
+                <span class="titre-type">- month :</span><br/>
+                Pour le mois.<br/>
+                </p>
+                <form method="post" action="page-de-reception.php">
+                    <p class="p-form4">
+                        <label for="mail"></label>
+                        <input type="month" name="mail" id="mail">
+                    </p>
+                </form>
+                <p class="p-form3">
+                <span class="titre-type">- time :</span><br/>
+                Pour l'heure (13:37 par exemple).<br/>
+                </p>
+                <form method="post" action="page-de-reception.php">
+                    <p class="p-form4">
+                        <label for="mail"></label>
+                        <input type="time" name="mail" id="mail">
+                    </p>
+                </form>
+                <p class="p-form3">
+                <span class="titre-type">- week :</span><br/>
+                Pour la semaine.<br/>
+                </p>
+                <form method="post" action="page-de-reception.php">
+                    <p class="p-form4">
+                        <label for="mail"></label>
+                        <input type="week" name="mail" id="mail">
+                    </p>
+                </form>
+                <p class="p-form3">
+                <span class="titre-type">- search :</span><br/>
+                Permet de créer un champ de recherche.<br/>
+                Le navigateur décide ensuite comment afficher le champ de recherche. Ainsi, il peut ajouter une petite loupe au champ pour signifier que c'est un champ de recherche et éventuellement mémoriser les dernières recherches effectuées par le visiteur.<br/>
+                </p>
+                <form method="post" action="page-de-reception.php">
+                    <p class="p-form4">
+                        <label for="recherche">Rechercher :</label>
+                        <input type="search" name="recherche" id="recherche">
+                    </p>
+                </form>
+                <p class="p-form3">
+                <span class="titre-type">- file :</span><br/>
+                Permet à un utilisateur de sélectionner un ou plusieurs fichiers depuis leur appareil et de les uploader vers un serveur.<br/>
+                <br/>
+                En complément des attributs partagés par l'ensemble des éléments &lt;input&gt;, les champs de type file peuvent également utiliser les attributs suivants :<br/>
+                accept : un ou plusieurs identifiants de type de fichier décrivants les types de fichier autorisés (jpeg, png, .docx, etc).<br/>
+                capture : La source à utiliser pour capturer des images ou des vidéos.<br/>
+                files : un objet FileList qui liste les fichiers choisis.<br/>
+                multiple : un attribut booléen qui, lorsqu'il est présent, indique que plusieurs fichiers peuvent être sélectionnés.<br/>
+                <span class="code-visible">
+                    &lt;label for="avatar">Seulement les images en jpeg ou png :&lt;/label&gt;<br/>
+                    &lt;input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"&gt;<br/>
+                </span>
+                </p>
+                <form method="post" action="page-de-reception.php">
+                    <p class="p-form4">
+                        <label for="avatar">Seulement les images en jpeg ou png :</label>
+                        <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg">
+                    </p>
+                </form>
+                <p class="p-form3">
+                <span class="titre-type">- hidden :</span><br/>
+                Mention spéciale pour le type hidden qui fait un champ caché. Dans ce cas, l' input sert à transmettre des informations entre différentes pages.<br/>
+                <br/>
+                Nous venons de voir que la balise input possède de nombreux type. Cependant, dans bien des cas, ça reste un champ de texte dont on a précisé la finalité (mot de passe, téléphone, etc.).<br/> 
+                Il y a cependant des cas où le type de l'input n'appelle pas à la saisie clavier, mais à une sélection, dans ce cas, la forme est toute autre.<br/>
+                </p>
+                <p class="p-form3">
+                <span class="titre-type">- radio :</span><br/>
+                Ce sont des cases pour choisir parmi plusieurs options, mais où il n'est possible d'en choisir qu'une seule.<br/> 
+                Il faut pour cela mettre radio en tant que type de l'input, et pour que le navigateur reconnaisse que les différentes options font partie du même groupe, leur donner le même nom.<br/>
+                Enfin, le label est très important ici, car les utilisateurs cliquent souvent sur le texte et non pile-poil sur le bouton lui-même.<br/>
+                <span class="code-visible">
+                    &lt;form method="post" action="traitement.php"&gt;<br/>
+                    &emsp;&lt;p&gt;<br/>
+                    &emsp;&emsp;Veuillez indiquer la tranche d'âge dans laquelle vous vous situez :<br/>
+                    &emsp;&emsp;&lt;input type="radio" name="age" value="moins15" id="moins15"/&gt;<br/> 
+                    &emsp;&emsp;&lt;label for="moins15">Moins de 15 ans&lt;/label&gt;<br/>
+                    <br/>
+                    &emsp;&emsp;&lt;input type="radio" name="age" value="medium15-25" id="medium15-25"/&gt;<br/> 
+                    &emsp;&emsp;&lt;label for="medium15-25">15-25 ans&lt;/label&gt;<br/>
+                    <br/>
+                    &emsp;&emsp;&lt;input type="radio" name="age" value="medium25-40" id="medium25-40"/&gt;<br/> 
+                    &emsp;&emsp;&lt;label for="medium25-40">25-40 ans&lt;/label&gt;<br/>
+                    <br/>
+                    &emsp;&emsp;&lt;input type="radio" name="age" value="plus40" id="plus40" /&gt;<br/>
+                    &emsp;&emsp;&lt;label for="plus40">Encore plus vieux que ça ?!&lt;/label&gt;<br/>
+                    &emsp;&lt;/p&gt;<br/>
+                    &lt;/form&gt;<br/>
+                </span>
+                </p>
+                <form method="post" action="traitement.php">
+                    <p class="p-form4">
+                        Veuillez indiquer la tranche d'âge dans laquelle vous vous situez :<br />
+                        <input type="radio" name="age" value="moins15" id="moins15"/> 
+                        <label for="moins15">Moins de 15 ans</label><br />
+
+                        <input type="radio" name="age" value="medium15-25" id="medium15-25"/> 
+                        <label for="medium15-25">15-25 ans</label><br />
+
+                        <input type="radio" name="age" value="medium25-40" id="medium25-40"/> 
+                        <label for="medium25-40">25-40 ans</label><br />
+
+                        <input type="radio" name="age" value="plus40" id="plus40" />
+                        <label for="plus40">Encore plus vieux que ça ?!</label>
+                    </p>
+                </form>
+                <p class="p-form3">
+                <span class="titre-type">- checkbox :</span><br/>
+                Similaire à radio à cela près qu'il est possible de cocher plusieurs cases. Elles doivent donc avoir des noms (name) différents.<br/>
+                Vous pouvez faire en sorte qu'une case soit cochée par défaut avec l'attribut checked.<br/>
+                Exemple :
+                <span class="code-visible">
+                &lt;input type="checkbox" name="choix" checked /&gt;<br/>
+                </span>
+                <br/>
+                <span class="code-visible">
+                    &lt;form method="post" action="traitement.php"&gt;<br/>
+                    &emsp;&lt;p&gt;<br/>
+                    &emsp;&emsp;Cochez les aliments que vous aimez manger :<br/>
+                    &emsp;&emsp;&lt;input type="checkbox" name="frites" id="frites"/&gt;<br/> 
+                    &emsp;&emsp;&lt;label for="frites">Frites&lt;/label&gt;<br/>
+                            <br/>
+                    &emsp;&emsp;&lt;input type="checkbox" name="steak" id="steak"/&gt;<br/> 
+                    &emsp;&emsp;&lt;label for="steak">Steak haché&lt;/label&gt;<br/>
+                            <br/>
+                    &emsp;&emsp;&lt;input type="checkbox" name="epinards" id="epinards"/&gt;<br/> 
+                    &emsp;&emsp;&lt;label for="epinards">Epinards&lt;/label&gt;<br/>
+                            <br/>
+                    &emsp;&emsp;&lt;input type="checkbox" name="huitres" id="huitres" /&gt;<br/>
+                    &emsp;&emsp;&lt;label for="huitres">Huîtres&lt;/label&gt;<br/>
+                    &emsp;&lt;/p&gt;<br/>
+                    &lt;/form&gt;<br/>
+                </span>
+                </p>
+                <form method="post" action="traitement.php">
+                    <p class="p-form4">
+                        Cochez les aliments que vous aimez manger :<br />
+                        <input type="checkbox" name="frites" id="frites" /> 
+                        <label for="frites">Frites</label><br />
+
+                        <input type="checkbox" name="steak" id="steak" /> 
+                        <label for="steak">Steak haché</label><br />
+
+                        <input type="checkbox" name="epinards" id="epinards" />
+                        <label for="epinards">Epinards</label><br />
+
+                        <input type="checkbox" name="huitres" id="huitres" /> 
+                        <label for="huitres">Huitres</label>
+                    </p>
+                </form>
+                <p class="p-form3">
+                <span class="titre-type">- select :</span><br/>
+                Les listes déroulantes sont un autre moyen de faire un choix parmi plusieurs possibilités.<br/> 
+                Le fonctionnement est un peu différent. On va utiliser la balise &lt;select&gt; &lt;/select&gt; qui indique le début et la fin de la liste déroulante.<br/> 
+                On ajoute l'attribut name="" à la balise pour donner un nom à la liste.<br/>
+                Puis, à l'intérieur du &lt;select&gt; &lt;/select&gt;, nous allons placer plusieurs balises &lt;option&gt; &lt;/option&gt; (une par choix possible).<br/> 
+                On ajoute à chacune d'elles un attribut value="" pour pouvoir identifier ce que le visiteur a choisi.<br/>
+                Si vous voulez qu'une option soit sélectionnée par défaut, utilisez cette fois l'attribut selected.<br/>
+                Exemple :
+                <span class="code-visible">
+                &lt;option value="canada" selected&gt;Canada&lt;/option&gt;<br/>
+                </span>
+                <br/>
+                <span class="code-visible">
+                    &lt;form method="post" action="traitement.php"&gt;<br/>
+                    &emsp;&lt;p&gt;<br/>
+                    &emsp;&emsp;&lt;label for="pays">Dans quel pays habitez-vous ?&lt;/label&gt;<br/>
+                    &emsp;&emsp;&lt;select name="pays" id="pays"&gt;<br/>
+                    &emsp;&emsp;&emsp;&lt;option value="france"&gt;France&lt;/option&gt;<br/>
+                    &emsp;&emsp;&emsp;&lt;option value="espagne"&gt;Espagne&lt;/option&gt;<br/>
+                    &emsp;&emsp;&emsp;&lt;option value="italie"&gt;Italie&lt;/option&gt;<br/>
+                    &emsp;&emsp;&emsp;&lt;option value="royaume-uni"&gt;Royaume-Uni&lt;/option&gt;<br/>
+                    &emsp;&emsp;&emsp;&lt;option value="canada"&gt;Canada&lt;/option&gt;<br/>
+                    &emsp;&emsp;&emsp;&lt;option value="etats-unis"&gt;États-Unis&lt;/option&gt;<br/>
+                    &emsp;&emsp;&emsp;&lt;option value="chine"&gt;Chine&lt;/option&gt;<br/>
+                    &emsp;&emsp;&emsp;&lt;option value="japon"&gt;Japon&lt;/option&gt;<br/>
+                    &emsp;&emsp;&lt;/select&gt;<br/>
+                    &emsp;&lt;/p&gt;<br/>
+                    &lt;/form&gt;<br/>
+                </span>
+                </p>
+                <form method="post" action="traitement.php">
+                    <p class="p-form4">
+                    <label for="pays">Dans quel pays habitez-vous ?</label><br />
+                        <select name="pays" id="pays">
+                            <option value="france">France</option>
+                            <option value="espagne">Espagne</option>
+                            <option value="italie">Italie</option>
+                            <option value="royaume-uni">Royaume-Uni</option>
+                            <option value="canada">Canada</option>
+                            <option value="etats-unis">États-Unis</option>
+                            <option value="chine">Chine</option>
+                            <option value="japon">Japon</option>
+                        </select>
+                    </p>
+                </form>
+                <p class="p-form3">
+                Vous pouvez aussi grouper vos options avec la balise &lt;optgroup&gt; &lt;/optgroup&gt;. Dans notre exemple, pourquoi ne pas séparer les pays en fonction de leur continent ?<br/>
+                <span class="code-visible">
+                    &lt;form method="post" action="traitement.php"&gt;<br/>
+                    &emsp;&lt;p&gt;<br/>
+                    &emsp;&emsp;&lt;label for="pays">Dans quel pays habitez-vous ?&lt;/label&gt;<br/>
+                    &emsp;&emsp;&lt;select name="pays" id="pays"&gt;<br/>
+                    &emsp;&emsp;&emsp;&lt;optgroup label="Europe"&gt;<br/>
+                    &emsp;&emsp;&emsp;&emsp;&lt;option value="france"&gt;France&lt;/option&gt;<br/>
+                    &emsp;&emsp;&emsp;&emsp;&lt;option value="espagne"&gt;Espagne&lt;/option&gt;<br/>
+                    &emsp;&emsp;&emsp;&emsp;&lt;option value="italie"&gt;Italie&lt;/option&gt;<br/>
+                    &emsp;&emsp;&emsp;&emsp;&lt;option value="royaume-uni"&gt;Royaume-Uni&lt;/option&gt;<br/>
+                    &emsp;&emsp;&emsp;&lt;/optgroup&gt;<br/>
+                    &emsp;&emsp;&emsp;&lt;optgroup label="Amérique"&gt;<br/>
+                    &emsp;&emsp;&emsp;&emsp;&lt;option value="canada"&gt;Canada&lt;/option&gt;<br/>
+                    &emsp;&emsp;&emsp;&emsp;&lt;option value="etats-unis"&gt;États-Unis&lt;/option&gt;<br/>
+                    &emsp;&emsp;&emsp;&lt;/optgroup&gt;<br/>
+                    &emsp;&emsp;&emsp;&lt;optgroup label="Asie"&gt;<br/>
+                    &emsp;&emsp;&emsp;&emsp;&lt;option value="chine"&gt;Chine&lt;/option&gt;<br/>
+                    &emsp;&emsp;&emsp;&emsp;&lt;option value="japon"&gt;Japon&lt;/option&gt;<br/>
+                    &emsp;&emsp;&emsp;&lt;/optgroup&gt;<br/>
+                    &emsp;&emsp;&lt;/select&gt;<br/>
+                    &emsp;&lt;/p&gt;<br/>
+                    &lt;/form&gt;<br/>
+                </span>
+                </p>
+                <form method="post" action="traitement.php">
+                    <p class="p-form2">
+                    <label for="pays">Dans quel pays habitez-vous ?</label><br/>
+                        <select name="pays" id="pays">
+                            <optgroup label="Europe">
+                                <option value="france">France</option>
+                                <option value="espagne">Espagne</option>
+                                <option value="italie">Italie</option>
+                                <option value="royaume-uni">Royaume-Uni</option>
+                            </optgroup>
+                            <optgroup label="Amérique">
+                                <option value="canada">Canada</option>
+                                <option value="etats-unis">Etats-Unis</option>
+                            </optgroup>
+                            <optgroup label="Asie">
+                                <option value="chine">Chine</option>
+                                <option value="japon">Japon</option>
+                            </optgroup>
+                        </select>
+                    </p>
+                </form>
+
+            <h4>&lt;datalist&gt;</h4>
+                <p class="p-form1">
+                Complète l'input text en permettant d'avoir des suggestions automatiques au fur et à mesure de la saisie. Voyez l'exemple d'utilisation ci-dessous<br/>
+                <span class="code-visible">
+                &lt;label for="choix_bieres">Indiquez votre bière préférée :&lt;/label&gt;<br/>
+                &lt;input list="bieres" type="text" id="choix_bieres"&gt;<br/>
+                &lt;datalist id="bieres"&gt;<br/>
+                    &emsp;&lt;option value="Meteor"&gt;<br/>
+                    &emsp;&lt;option value="Pils"&gt;<br/>
+                    &emsp;&lt;option value="Kronenbourg"&gt;<br/>
+                    &emsp;&lt;option value="Grimbergen"&gt;<br/>
+                &lt;/datalist&gt;<br/>
+                </span>
+                <br/>
+                <form method="post" action="traitement.php"></form>
+                    <p class="p-form2">
+                    <label for="choix_bieres">Indiquez votre bière préférée :</label>
+                    <input list="bieres" type="text" id="choix_bieres">
+                        <datalist id="bieres">
+                            <option value="Meteor">
+                            <option value="Pils">
+                            <option value="Kronenbourg">
+                            <option value="Grimbergen">
+                        </datalist>
+                    </p>
+                </form>
+
+            <h4>&lt;textarea&gt;</h4>
+                <p class="p-form1">
+                Similaire à la balise input en mode text, sauf que c'est un bloc de texte, donc sur plusieurs lignes. C'est évidemment utile pour de grandes quantités de texte.<br/> 
+                En plus du placeholder (cf. les attributs) et du name (même usage que pour l'input), on peut définir sa taille via les attributs rows et cols, lesquels définissent la taille du bloc en nombre de lignes et de colonnes.<br/> 
+                Personnellement, je préfère définir la taille via le css (en CSS, il suffit d'appliquer les propriétés CSS width et height au textarea.), mais sachez que c'est possible comme cela.<br/> 
+                Dernier point, si on veut lui attribuer une valeur par défaut (texte déjà renseigné), il suffit de la placer entre &lt;textarea …&gt; et &lt;/textarea&gt;.<br/> 
+                Dans ce cas, on n'utilise pas l'attribut value : on écrit tout simplement le texte par défaut entre la balise ouvrante et la balise fermante.<br/>
+                <span class="code-visible">
+                &lt;form method="post" action="traitement.php"&gt;<br/>
+                &emsp;&lt;p&gt;<br/>
+                &emsp;&emsp;&lt;label for="ameliorer"&gt;Comment améliorer mon site ?&lt;/label&gt;<br/>
+                &emsp;&emsp;&lt;textarea rows="5" cols="100" name="ameliorer" id="ameliorer" placeholder="Tapez votre commentaire ici..."&gt;&lt;/textarea&gt;<br/>
+                &emsp;&lt;/p&gt;<br/>
+                &lt;/form&gt;<br/>
+                </span>
+                </p>
+                <form method="post" action="traitement.php">
+                    <p class="p-form2">
+                    <label for="ameliorer">Comment améliorer mon site ?</label><br/>
+                    <textarea rows="5" cols="100" name="ameliorer" id="ameliorer" placeholder="Tapez votre commentaire ici..."></textarea>
+                    </p>
+                </form>
+
+            <h4>&lt;fieldset&gt;</h4>
+                <p class="p-form1">
+                    Permet de regrouper des champs. Dans le cas où vous avez de nombreux champs, il peut être judicieux de les regrouper par thèmes.<br/> 
+                    Fieldset permet donc des regroupements et à l'aide de la balise legend vous pourrez donner un intitulé à ces groupes.<br/>
+                <span class="code-visible">
+                &lt;form method="post" action="traitement.php"&gt;<br/>
+                &emsp;&lt;fieldset&gt;<br/>
+                &emsp;&emsp;&lt;legend&gt;Vos coordonnées&lt;/legend&gt;<br/>
+                  
+                &emsp;&emsp;&emsp;&lt;label for="nom"&gt;Nom&lt;/label><br/>
+                &emsp;&emsp;&emsp;&lt;input type="text" name="nom" id="nom"&gt;<br/>
+                  
+                &emsp;&emsp;&emsp;&lt;label for="prenom"&gt;Prénom&lt;/label&gt;<br/>
+                &emsp;&emsp;&emsp;&lt;input type="text" name="prenom" id="prenom"&gt;<br/>
+                &emsp;&lt;/fieldset&gt;<br/>
+                   
+                &emsp;&lt;fieldset&gt;<br/>
+                &emsp;&emsp;&lt;legend&gt;Votre adresse&lt;/legend&gt;<br/>
+                &emsp;&emsp;&emsp;&lt;label for="ville"&gt;Ville&lt;/label&gt;<br/>
+                &emsp;&emsp;&emsp;&lt;input type="text" name="ville" id="ville"&gt;<br/>
+                  
+                &emsp;&emsp;&emsp;&lt;label for="cp"&gt;Code postal&lt;/label&gt;<br/>
+                &emsp;&emsp;&emsp;&lt;input type="text" name="cp" id="cp"&gt;<br/>
+                &emsp;&lt;/fieldset&gt;<br/>
+                &lt;/form&gt;
+                </span>
+                </p>
+                <form method="post" action="traitement.php">
+                    <fieldset>
+                        <legend>Vos coordonnées</legend>
+                  
+                            <label for="nom">Nom</label><br/>
+                            <input type="text" name="nom" id="nom"><br/>
+                  
+                            <label for="prenom">Prénom</label><br/>
+                            <input type="text" name="prenom" id="prenom"><br/>
+                        </fieldset>
+                   
+                    <fieldset>
+                        <legend>Votre adresse</legend>
+                            <label for="ville">Ville</label><br/>
+                            <input type="text" name="ville" id="ville"><br/>
+                  
+                            <label for="cp">Code postal</label><br/>
+                            <input type="text" name="cp" id="cp"><br/>
+                  </fieldset>
+                </form>
+                <p class="p-form2bis">
+                Vous pouvez placer automatiquement le curseur dans l'un des champs de votre formulaire avec l'attribut autofocus.<br/>
+                Par exemple pour placer le curseur dans le champ nom de l'exemple du dessus, il aurait fallu mettre :<br/>
+                <span class="code-visible">
+                    &lt;input type="text" name="nom" id="nom" autofocus&gt;<br/>
+                </span>
+                </p>
+                  
+
+
+
+
+
+
+                <p>
+                <br/>
+                Voyons les attributs plus en détails:<br/>
+                - name: permet de donner un nom au champ. Ce nom sera associé à la valeur du champ lors de l'envoi du formulaire. On utilisera donc ce nom pour récupérer la valeur côté serveur. Par exemple en PHP $_POST['nom'].<br/>
+                - id: permet de donner un identifiant unique à une balise. Unique signifie que cet identifiant ne doit pas apparaître plus d'une fois dans une page. Il sert principalement à retrouver un élément particulier pour lui attribuer un style en CSS ou y avoir accès en JavaScript.<br/> 
+                Dans le cadre d'un champ de formulaire, cet attribut permet aussi d'associer la balise avec un champ label via l'attribut for. Petite précision, dans les bonnes pratiques, il est conseillé d'éviter de trop utiliser l'id pour le css.<br/>
+                - placeholder: permet de donner une indication sur le contenu du champ. Cette indication disparaîtra dès que le visiteur aura cliqué à l'intérieur du champ.<br/>
+                - size: permet d'agrandir le champ de saisie.<br/>
+                - maxlength: permet de limiter le nombre de caractères que l'on peut saisir.<br/>
+                - value: permet de pré-remplir le champ de saisie avec une valeur par défaut.<br/>
+                <br/>
+                Ex: &lt;input type="text" name="pseudo" id="pseudo" placeholder="Ex: Martin" size="30" maxlength="10"&gt;<br/>
+                </p>
+                <form method="post" action="page-de-reception.php"></form>
+                <p>
+                <input type="text" name="pseudo" id="pseudo" placeholder="Ex: Martin" size="30" maxlength="10">
+                </p>
+                </form>
+                <p>
+                La zone de texte contient une indication permettant de comprendre ce qu'il faut saisir ; le champ fait 30 caractères de long mais on ne peut écrire que 10 caractères maximum à l'intérieur.<br/>
+                <br/>
+
+
+
+                Les noms sont plutôt parlants. Sachez qu'ils permettent d'afficher des contrôles plus adaptés à leur contexte:<br/>
+                - pass n'affiche que des points au lieu du texte entré, d'autres comme email, tel ou url permettent aux terminaux tactiles d'afficher un clavier adapté, etc.<br/>
+                - L'attribut name permet de donner un nom au champ et c'est par ce nom que vous retrouverez les données associées sur la page de réception (avec $_GET['nom_de_mon_input'] en PHP par ex.).<br/> 
+                - On peut aussi lui donner une valeur par défaut avec un texte prédéfini, pour cela, il faut renseigner l'attribut value.<br/> 
+                - Enfin, l'id permettra ici d'associer ce champ avec la balise label de sorte qu'un clic sur cette balise place le curseur dans l'input.<br/>
+                Petit aparté pour file. Cet input permet, comme son nom l'indique, d'envoyer des fichiers tels que photos, vidéos, et autres documents.<br/> 
+                Pour que cela fonctionne, il faut bien penser à encoder les fichiers pour l'envoi. Cela se fait simplement en ajoutant le type d'encodage dans la balise form : enctype="multipart/form-data". Rien de plus.<br/> 
+                Petite astuce, si vous voulez permettre l'envoi de plusieurs fichiers à la fois, ajoutez l'attribut multiple à votre input.
+                </p>
+
+
+
+    </section>
+    </main>
+</body>
+</html>

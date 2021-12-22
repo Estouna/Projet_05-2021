@@ -1,0 +1,124 @@
+body
+{
+	background-image: url("images/circuits3b.png");
+	background-attachment: scroll;
+	background-repeat: repeat;
+	margin: 0;
+    z-index: 2;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    font-size: 2em;
+    text-shadow: 3px 3px 1px rgba(72, 38, 139, 0.671);
+}
+
+header{
+	background-image: -webkit-linear-gradient(to top, #bb9afe 0%, #8868cb 40%);
+	background-image: linear-gradient(to bottom, #bb9afe 0%, #8768cb 40%);
+	text-align: center;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	box-shadow: 3px 4px 10px 0px rgba(55, 9, 82, 0.815);
+	margin: 0;
+}
+
+main{
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 1;
+    padding-top: 30px;
+    margin: 0;
+}
+
+section
+{
+	margin: 0% 20% 0% 20%;
+    padding: 20px;
+    background-color: white;
+    box-shadow: 4px 4px 5px 0px rgba(60, 21, 97, 0.774);
+    border: 2px solid mediumpurple;
+    border-radius: 10px;
+}
+
+section P
+{
+	font-size: 0.9em;
+	Background: white;
+	padding: 30px 30px 30px 30px;
+	border: 3px double mediumpurple;
+	border-radius: 10px;
+	line-height: 1.7em;
+    box-shadow: 4px 4px 5px 0px rgba(102, 51, 153, 0.8);
+}
+
+.p-debut{
+    text-align: center;
+}
+
+h4
+{
+	font-size: 1.3em;
+	background: white;
+	border-radius: 5px;
+	border: 3px double mediumpurple;
+	box-shadow: 5px 5px 5px 0px rgba(102, 51, 153, 0.8);
+	color: mediumpurple;
+	text-align: center;
+	width: 180px;
+	padding: 15px 0px 15px 0px;
+	margin: 5em 0em 2em 0em;	
+}
+
+.titre-type{
+    color: mediumpurple;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.code-visible{
+    color:rgb(63, 182, 63);
+}
+
+.p-form1{
+    border: 3px double mediumpurple;
+    border-bottom: none;
+    box-shadow: 2px 0px 0px rebeccapurple;
+    border-radius: 10px 10px 0px 0px;
+    margin-bottom: 0;
+}
+
+.p-form2{
+    border: 3px double mediumpurple;
+    border-top: none;
+    box-shadow: 2px 2px 0px rebeccapurple;
+    border-radius: 0px 0px 10px 10px;
+    margin-top: -20px;
+}
+
+.p-form2bis{
+    border: 3px double mediumpurple;
+    border-top: none;
+    box-shadow: 2px 2px 0px rebeccapurple;
+    border-radius: 0px 0px 10px 10px;
+}
+
+.p-form3{
+    border: 3px double mediumpurple;
+    border-top: none;
+    border-bottom: none;
+    box-shadow: 2px 0px 0px rebeccapurple;
+    border-radius: 0px 0px 0px 0px;
+    margin-top: -20px;
+    margin-bottom: 0;
+}
+
+.p-form4{
+    border: 3px double mediumpurple;
+    border-top: none;
+    border-bottom: none;
+    box-shadow: 2px 0px 0px rebeccapurple;
+    border-radius: 0px 0px 0px 0px;
+    margin-top: -50px;
+}
+
